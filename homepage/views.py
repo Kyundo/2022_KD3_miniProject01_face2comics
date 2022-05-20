@@ -29,6 +29,6 @@ def upload1(request):
         size = upload_file.size # 파일 크기
     with open(name, 'wb') as file: # 파일 저장
         for chunk in upload_file.chunks():
-        file.write(chunk)
+            file.write(chunk)
         return HttpResponse('%s<br>%s' % (name, size))
     return render(request, 'file/upload1.html')
