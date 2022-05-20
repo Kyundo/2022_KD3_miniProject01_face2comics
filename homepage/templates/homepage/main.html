@@ -13,7 +13,7 @@
 
 
 
-<body style="background-image: url(/static/homepage/redgalaxy_2.jpg) ">
+<body style="background-color: #000000; ">
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
@@ -24,19 +24,19 @@
                     <img src="/static/homepage/BRANDLOGO.png" alt="Logo" style="width:100px;" class="rounded-pill">
                 </a>
                 <li class="nav-item">
-                    <a style="font-size:30px;" , class="nav-link active"
+                    <a style="font-size:2rem;" , class="nav-link active"
                         href="http://127.0.0.1:5501/marvel.html">MARVEL</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size:30px;" , class="nav-link active"
+                    <a style="font-size:2rem;" , class="nav-link active"
                         href="http://127.0.0.1:5501/disney.html">DISNEY</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size:30px;" , class="nav-link active"
+                    <a style="font-size:2rem;" , class="nav-link active"
                         href="http://127.0.0.1:5501/memberRegister.html">DC</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size:30px;" , class="nav-link active"
+                    <a style="font-size:2rem;" , class="nav-link active"
                         href="http://127.0.0.1:5501/memberRegister.html">REGISTER</a>
                 </li>
             </ul>
@@ -51,7 +51,7 @@
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-          </div>
+        </div>
 
 
         <!-- The slideshow/carousel -->
@@ -73,8 +73,10 @@
 
                 <div class="carousel-caption">
                     <h3></h3>
-                    <p style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
-                        Whatever happens tomorrow, you must promise me one thing. That you will stay who you are, not a perfect soldier, but a good man.
+                    <p
+                        style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
+                        Whatever happens tomorrow, you must promise me one thing. That you will stay who you are, not a
+                        perfect soldier, but a good man.
                     </p>
                 </div>
             </div>
@@ -96,12 +98,13 @@
 
                 <div class="carousel-caption">
                     <h3></h3>
-                    <p style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
+                    <p
+                        style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
                         I Think We Can Take Them. Do You Think We Can Take Them?
                     </p>
                 </div>
             </div>
-            
+
             <div class="carousel-item">
                 <table>
                     <tr style="background-color:#000000">
@@ -119,13 +122,14 @@
 
                 <div class="carousel-caption">
                     <h3></h3>
-                    <p style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
+                    <p
+                        style="font-size:20px; color:#FFFFFF; background-color: #ffffff; background-color: rgba( 000, 000, 000, 0.7 ); ">
                         I Think We Can Take Them. Do You Think We Can Take Them?
                     </p>
                 </div>
             </div>
 
-        
+
 
         </div>
 
@@ -141,110 +145,77 @@
 
 
 
-    <div class="dropBox">
-        <h1 style= "font-size:30px; 
-        font-weight: bold; 
-        background-color:red; 
-        color:#FFFFFF;
-        margin : 20px; 
-        padding : 30px;
-        border-radius : 10px;
-        " 
-        
-        
-        
-        class="btn-upload" >DRAG IMAGE</h1>
+    <p>drag and drop your image!</p>
+    <div class="content">
     </div>
 
 
     <script>
-    window.onfocus=function(){
-    }
+        $('.content')
+            .on("dragover", dragOver)
+            .on("dragleave", dragOver)
+            .on("drop", uploadFiles);
 
-    window.onload=function(){
-        window.focus();
-        window.moveTo(0,0);
-        window.resizeTo(1280,800);
-        window.scroll(0,250)
-    }
+        function dragOver(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            if (e.type == "dragover") {
+                $(e.target).css({
+                    "background-color": "black",
+                    "outline-offset": "-20px"
+                });
+            } else {
+                $(e.target).css({
+                    "background-color": "gray",
+                    "outline-offset": "-10px"
+                });
+            }
+        }
 
+        function uploadFiles(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            dragOver(e);
 
-
-    const $drop = document.querySelector(".dropBox");
-    const $title = document.querySelector(".dropBox h1");
-
-    // 드래그한 파일 객체가 해당 영역에 놓였을 때
-    $drop.ondrop = (e) => {
-    e.preventDefault();
-    $drop.className = "dropBox";
-    
-    // 파일 리스트
-    const files = [...e.dataTransfer?.files];
-
-    $title.innerHTML = files.map(v => v.name).join("<br>");
-    }
-
-    // ondragover 이벤트가 없으면 onDrop 이벤트가 실핻되지 않습니다.
-    $drop.ondragover = (e) => {
-    e.preventDefault();
-    }
-
-    // 드래그한 파일이 최초로 진입했을 때
-    $drop.ondragenter = (e) => {
-    e.preventDefault();
-    
-    $drop.className += " active";
-    }
-
-    // 드래그한 파일이 영역을 벗어났을 때
-    $drop.ondragleave = (e) => {
-    e.preventDefault();
-    
-    $drop.className = "dropBox";
-    }
-
-
+            e.dataTransfer = e.originalEvent.dataTransfer;
+            var files = e.target.files || e.dataTransfer.files;
+            if (files.length > 1) {
+                alert('하나만 올려라.');
+                return;
+            }
+            if (files[0].type.match(/image.*/)) {
+                $(e.target).css({
+                    "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
+                    "outline": "none",
+                    "background-size": "100% 100%"
+                });
+            } else {
+                alert('이미지가 아닙니다.');
+                return;
+            }
+        }
     </script>
-
+    
     <style>
-
-
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Pretendard, 'Malgun Gothic', sans-serif;
+        .content {
+            outline: 2px dashed #92b0b3;
+            outline-offset: -10px;
+            text-align: center;
+            transition: all .15s ease-in-out;
+            width: 300px;
+            height: 300px;
+            background-color: gray;
         }
-
-        .dropBox {
-        width: flex;
-        height: 50vh;
-        
-        margin: .6rem;
-        overflow: auto;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-        border-radius: 10px;
-        user-select: none;
-        transition: 0.4s;
-        }
-
-        /* 드롭 반응 */
-        .dropBox.active {
-        background-image:url(/static/homepage/redhulk.jpg);
-        }
-
-        .dropBox h1 {
-        font-size: 1.8rem;
+    
+        .content img,
+        .content video {
+            width: 100%;
+            height: 100%;
+            display: none;
         }
     </style>
 
-   
+
 </body>
+
 </html>
