@@ -18,8 +18,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('homepage/', include('homepage.urls')),
+=======
+    path('', include('homepage.urls')),
+<<<<<<< HEAD
+=======
+>>>>>>> d8d386a17692e349c831714aeba2a63404e7630f
     path('', include('resultpage.urls')),
     path('', include('quiz.urls')),
 
+>>>>>>> e4554fe5de3e53c5aef54d7b2d3cfdfdce4a799a
 ]
