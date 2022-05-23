@@ -19,4 +19,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
+<<<<<<< HEAD
+=======
+    path('', include('resultpage.urls')),
+    path('', include('quiz.urls')),
+
+>>>>>>> e4554fe5de3e53c5aef54d7b2d3cfdfdce4a799a
 ]
