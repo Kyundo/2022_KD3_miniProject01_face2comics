@@ -1,12 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-    ㅇㅇㅇㅇㅇ
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    /* auto : 가로방향 중앙정렬 */
+    margin: 0 auto;
+    padding: 0 ;
+    /* border-box : 지정한 CSS 전체영역에 적용 */
+    box-sizing: border-box; 
+    margin-top: 20;
+}
+
+body{
+    /* background-color: #333; */
+    background-image: url('/static/homepage/marvel-cinematic-universe-social-featured.jpg');
+}
+.container{
+    display: block;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 10px;
+    padding-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1000px;
+    height: 180vh;
+}
+.container > p{
+    font-size: 32px;
+}
+.question{
+    width: 80%;
+    font-weight: bold;
+}
+.options{
+    position: relative;
+    /* padding-left: 40px;
+    margin-left: 75%; */
+}
+#options label{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.options input{
+    opacity: 0;
+}
+.checkmark {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #8C8C8C;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+.options input:checked ~ .checkmark:after {
+    display: block;
+}
+.options .checkmark:after{
+    content: "";
+	width: 10px;
+    height: 10px;
+    display: block;
+	background: white;
+    position: absolute;
+    top: 50%;
+	left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 300ms ease-in-out 0s;
+}
+.options input[type="radio"]:checked ~ .checkmark{
+    background: #21bf73;
+    transition: 300ms ease-in-out 0s;
+}
+.options input[type="radio"]:checked ~ .checkmark:after{
+    transform: translate(-50%,-50%) scale(1);
+}
+.btn-primary{
+    /* display: block; */
+    /* position: absolute;
+    top: 70%;
+	left: 13%; */
+    padding: 5px 15px;
+    background-color: #FF0000;
+    border-radius: 5px;
+    font-size: 15;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: 1px solid #FF0000;
+}
+
+.btn-primary:hover{
+    background-color: #21bf73;
+    border: 1px solid #21bf73;
+}
+
+.btn-success{
+    /* display: block; */
+    position: absolute;
+    right: 0;
+    /* top: 70%;
+	left: 80%; */
+    padding: 5px 15px;
+    background-color: #0100FF;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 15;
+    border: 1px solid #0100FF;
+}
+
+.btn-success:hover{
+    background-color: #21bf73;
+    border: 1px solid #21bf73;
+}
+
+@media(max-width:576px){
+    .question{
+        width: 100%;
+        word-spacing: 2px;
+    } 
+}
+
+#panel {
+    position: relative;
+}
+
+.picture {
+    width: 0 auto;
+    height: 45%;
+}
+
+img {
+  min-width: 120px;
+  min-height: 180px;
+  width: 100%;
+  margin: -10;
+}
+
+
+
+</style>
+
+    <div class="container mt-sm-5 my-1">
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h5"><b></b></div>
+           
+            <!-- page 문제에 따라 사진 변경필요 -->
+
+            <div style="display: flex;flex-direction: cloumn;">
+                <div class="picture" style="text-align:center; width: 30%;">
+                    <img v-for ="name in images" key="id" src="require('@/static/homepage/${img}')" class="img">
+                </div> 
+            </div>
+
+            <div style="text-align:center; width: 30%;">
+                <p>
+                    아이언맨
+                </p>
+                <p>
+                    당신은 체계적이고 현실적이며 리더십이 강한 사람! 구체적이고 현실감각이 뛰어나며 일을 조직하고 계획하여 추진시키는 능력이 있다. 또한, 사교성이 뛰어나고 자기 관리가 철저하며 한 번 시작한 일은 책임지고 마무리한다. 계획대로 행동하는 것을 좋아하고 도전정신이 강하다. 다만, 직설적인 표현으로 상대방이 상처받을 수 있고 아무것도 하지 않는 것을 불안해하는 경향이 있다.
+                </p>
+                <p style="font-size:20px">
+                    팀을 만든다면
+                </p>
+            </div>
+
+            <div style="display: flex;flex-direction: row;">
+                <div  style="text-align:center; width: 30%;">
+                    최고의 팀원
+                </div> 
+                <div  style="text-align:center; width: 30%;">
+                    최악의 팀원
+                </div> 
+            </div>
+            <div style="display: flex;flex-direction: row;">
+                <div class="picture" style="text-align:center; width: 30%;">
+                    <img src="/static/homepage/_ch8k57rc4509la78v1o8.jpg" class="img">
+                </div> 
+                <div class="picture" style="text-align:center; width: 30%;">
+                    <img src="/static/homepage/_ch8k57rc4509la78v1o8.jpg" class="img">
+                </div> 
+            </div>
+        </div>
+        <!-- <div class="d-flex align-items-center pt-3">
+            <div class="ml-auto mr-sm-5">
+            </div>
+        </div> -->
+    </div>
+
+
+
+
 </body>
-</html>
