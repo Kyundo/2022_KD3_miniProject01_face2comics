@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('', include('resultpage.urls')),
+<<<<<<< HEAD
     path('', include('quiz page1.urls')),
     path('', include('quiz page2.urls')),
     path('', include('quiz page3.urls')),
@@ -33,4 +34,7 @@ urlpatterns = [
     path('', include('quiz page11.urls')),
     path('', include('quiz page12.urls')),
 
+=======
+    path('', include('quiz.urls')),
+>>>>>>> 8d9237f3a9fb77df76f0e54668e5260bf0b6afea
 ]
