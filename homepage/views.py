@@ -40,10 +40,10 @@ def test(request):
         upload_file = request.FILES.get('file') # 파일 객체
         name = upload_file.name # 파일 이름
         size = upload_file.size # 파일 크기
-<<<<<<< HEAD
         with open(name, 'wb') as file: # 파일 저장
             for chunk in upload_file.chunks():
                 file.write(chunk)
+<<<<<<< HEAD
         return HttpResponse('%s<br>%s' % (name, size))
     return render(request, 'homepage/upload1.html')
 
@@ -100,6 +100,8 @@ def download(request):
         for chunk in upload_file.chunks():
             file.write(chunk)
 >>>>>>> e4554fe5de3e53c5aef54d7b2d3cfdfdce4a799a
+=======
+>>>>>>> 906a8798dc44259d798c1e3529898d0c25e3abfd
         return HttpResponse('%s<br>%s' % (name, size))
     return render(request, 'homepage/test.html')
 

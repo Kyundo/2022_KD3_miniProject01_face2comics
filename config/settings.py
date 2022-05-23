@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'homepage',
-    'quiz',
+    'quiz page1', 'quiz page2', 'quiz page3', 'quiz page4', 'quiz page5',
+    'quiz page6', 'quiz page7', 'quiz page8', 'quiz page9', 'quiz page10',
+    'quiz page11', 'quiz page12',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
