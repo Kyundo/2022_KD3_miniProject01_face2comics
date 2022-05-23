@@ -24,7 +24,7 @@ body{
     padding-top: 20px;
     font-family: 'Montserrat', sans-serif;
     max-width: 1000px;
-    height: 180vh;
+    height: 90vh;
 }
 .container > p{
     font-size: 32px;
@@ -148,43 +148,30 @@ img {
 
     <div class="container mt-sm-5 my-1">
         <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b></b></div>
+            <div class="py-2 h5"><b> Q. page 2 입니다</b></div>
            
             <!-- page 문제에 따라 사진 변경필요 -->
-
-            <div style="display: flex;flex-direction: cloumn;">
-                <div class="picture" style="text-align:center; width: 30%;">
-                    <img v-for ="name in images" key="id" src="/static/homepage/hero/{{file_name}}.jpg" class="img">
-                </div> 
-            </div>
-
-            <div style="text-align:center; width: 30%;">
-                <p>
-                fd
-                </p>
-                <p>
-                 ddd
-                </p>
-                <p style="font-size:20px">
-                    팀을 만든다면
-                </p>
-            </div>
-
-            <div style="display: flex;flex-direction: row;">
-                <div  style="text-align:center; width: 30%;">
-                    최고의 팀원
-                </div> 
-                <div  style="text-align:center; width: 30%;">
-                    최악의 팀원
-                </div> 
-            </div>
-            <div style="display: flex;flex-direction: row;">
-                <div class="picture" style="text-align:center; width: 30%;">
+            <div style="display: flex;flex-direction: column;">
+                <div class="picture" style="text-align:center; width: 50%;">
                     <img src="/static/homepage/_ch8k57rc4509la78v1o8.jpg" class="img">
-                </div> 
-                <div class="picture" style="text-align:center; width: 30%;">
-                    <img src="/static/homepage/_ch8k57rc4509la78v1o8.jpg" class="img">
-                </div> 
+                    </div> 
+                
+                <div style="display:flex; justify-content: center;width: 100%;" class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                    <label style="display: inline-block" class="options">
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                        <span style="margin-left: 15px; vertical-align: middle;">아이언맨</span>
+                    </label>
+                    <label style="display: inline-block" class="options">
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                        <span style="margin-left: 15px; vertical-align: middle;">캡틴</span>
+                    </label>
+                </div>
+            </div>
+            <div id="panel">
+                <button type="button" onclick="location.href='http://127.0.0.1:5502/quiz/templates/quiz/quiz page10.html'" class="btn btn-primary">Previous</button>
+                <button type="button" onclick="location.href='http://127.0.0.1:5502/quiz/templates/quiz/quiz page12.html'" class="btn btn-success">Next</button>
             </div>
         </div>
         <!-- <div class="d-flex align-items-center pt-3">
@@ -192,8 +179,4 @@ img {
             </div>
         </div> -->
     </div>
-
-
-
-
 </body>
